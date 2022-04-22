@@ -1,0 +1,72 @@
+@startuml
+hide circle
+skinparam interface {
+    hide members
+}
+
+class GameCharacter {
+    // ability scores
+    + int Strength {get;set;}
+    + int Dexterty {get;set;}
+    + int Constitution {get;set;}
+    + int Intelligence {get;set;}
+    + int Wisdom {get;set;}
+    + int Charisma {get;set;}
+
+    + int Initiative {get;}
+
+    // Health and resolve
+    + int StaminaPoints {get;}
+    + int HitPoints {get;}
+    + int ReservePoints {get;}
+
+    // saving throws
+    + int Fortitude {get;}
+    + int Reflex {get;}
+    + int Will {get;}
+}
+
+class PlayerCharacter {
+    + string Name {get;set;}
+}
+
+PlayerCharacter -left-|> GameCharacter
+
+interface IRace {
+    void applyTo(PlayerCharacter character)
+}
+
+interface ITheme {
+    void applyTo(PlayerCharacter character)
+}
+
+interface ICharacterClass {
+    void applyTo(PlayerCharacter character)
+}
+
+PlayerCharacter -up- "1" IRace : > race
+PlayerCharacter - "1" ITheme : > theme
+PlayerCharacter -- "1" ICharacterClass : > characterClass
+
+Android ..|>IRace
+Lashunta ..|> IRace
+Human ..|>IRace
+Shirren ..|>IRace
+Vesk ..|>IRace
+Ysoki ..|>IRace
+
+Icon ..|> ITheme
+Priest ..|> ITheme
+Outlaw ..|> ITheme
+BountyHunter .up.|> ITheme
+Spacefarer .up.|> ITheme
+Mercenary .up.|> ITheme
+
+Operative .up.|> ICharacterClass
+Mystic .up.|> ICharacterClass
+Envoy .up.|> ICharacterClass
+Mechanic .up.|> ICharacterClass
+Soldier .up.|> ICharacterClass
+Technomancer .up.|> ICharacterClass
+
+@enduml
