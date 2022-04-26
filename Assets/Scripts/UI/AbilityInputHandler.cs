@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-namespace Pocruga.OOPT.UI
+namespace Pocruga.OOPT.CharacterWizard
 {
     public class AbilityInputHandler : MonoBehaviour
     {

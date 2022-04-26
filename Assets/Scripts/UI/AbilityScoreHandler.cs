@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-namespace Pocruga.OOPT.UI
+namespace Pocruga.OOPT.CharacterWizard
 {
     public class AbilityScoreHandler : MonoBehaviour
     {
