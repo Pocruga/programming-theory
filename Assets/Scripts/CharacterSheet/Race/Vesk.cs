@@ -1,17 +1,17 @@
 
 namespace Pocruga.OOPT.CharacterSheet.Race
 {
-    public class Vesk : IRace
+    public class Vesk : Race
     {
-        public string Title => nameof(Vesk);
+        public override string Title => nameof(Vesk);
 
-        public string Description => "Heavily muscled and covered with thick scales and short, sharp horns, the reptilian vesk are exactly as predatory and warlike as they appear. Vesk originally sought to conquer and subdue their stellar neighbors, as they had all the other intelligent races in their own system, until an overwhelming threat forced them into a grudging alliance.";
+        public override string Description => "Heavily muscled and covered with thick scales and short, sharp horns, the reptilian vesk are exactly as predatory and warlike as they appear. Vesk originally sought to conquer and subdue their stellar neighbors, as they had all the other intelligent races in their own system, until an overwhelming threat forced them into a grudging alliance.";
 
-        public int HitPoints => 6;
+        public override int HitPoints => 6;
 
-        public bool HasAdditionalSelection() => false;
+        public override bool HasAdditionalSelection() => false;
 
-        public void ApplyTo(PlayerCharacter character)
+        public override void ApplyTo(PlayerCharacter character)
         {
             // Ability Adjustments: +2 Str, +2 Con, -2 Int
 

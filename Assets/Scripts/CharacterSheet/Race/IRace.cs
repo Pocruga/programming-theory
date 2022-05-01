@@ -7,10 +7,12 @@ namespace Pocruga.OOPT.CharacterSheet.Race
 
         string Description { get; }
 
+        string DisplayText { get; }
+
         int HitPoints { get; }
 
         bool HasAdditionalSelection();
 
         void ApplyTo(PlayerCharacter character);
-    }
+   }
 }

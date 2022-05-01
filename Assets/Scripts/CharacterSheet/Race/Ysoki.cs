@@ -1,16 +1,16 @@
 namespace Pocruga.OOPT.CharacterSheet.Race
 {
-    public class Ysoki : IRace
+    public class Ysoki : Race
     {
-        public string Title => nameof(Ysoki);
+        public override string Title => nameof(Ysoki);
 
-        public string Description => "Small and furtive, the ysoki are often overlooked by larger races. Yet through wit and technological prowess, they�ve spread throughout the Solar system, giving truth to the old adage that every starship needs a few rats.";
+        public override string Description => "Small and furtive, the ysoki are often overlooked by larger races. Yet through wit and technological prowess, they have spread throughout the Solar system, giving truth to the old adage that every starship needs a few rats.";
 
-        public int HitPoints => 2;
+        public override int HitPoints => 2;
 
-        public bool HasAdditionalSelection() => false;
+        public override bool HasAdditionalSelection() => false;
 
-        public void ApplyTo(PlayerCharacter character)
+        public override void ApplyTo(PlayerCharacter character)
         {
             // Ability Adjustments: +2 Dex + 2 Int �2 Str
 

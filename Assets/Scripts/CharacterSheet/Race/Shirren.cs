@@ -2,17 +2,17 @@
 namespace Pocruga.OOPT.CharacterSheet.Race
 {
 
-    public class Shirren : IRace
+    public class Shirren : Race
     {
-        public string Title => nameof(Shirren);
+        public override string Title => nameof(Shirren);
 
-        public string Description => "Once part of a ravenous hive of locust-like predators, the insectile shirrens only recently broke with their hive mind to become a race of telepaths physically addicted to their own individualism, yet dedicated to the idea of community and harmony with other races.";
+        public override string Description => "Once part of a ravenous hive of locust-like predators, the insectile shirrens only recently broke with their hive mind to become a race of telepaths physically addicted to their own individualism, yet dedicated to the idea of community and harmony with other races.";
 
-        public int HitPoints => 6;
+        public override int HitPoints => 6;
 
-        public bool HasAdditionalSelection() => false;
+        public override bool HasAdditionalSelection() => false;
 
-        public void ApplyTo(PlayerCharacter character)
+        public override void ApplyTo(PlayerCharacter character)
         {
             // Ability Adjustments: +2 Con, +2 Wis, -2 Cha
 
