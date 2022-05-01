@@ -5,8 +5,12 @@ using TMPro;
 
 namespace Pocruga.OOPT.CharacterWizard
 {
+    /// <summary>
+    /// Input handler for ability scores of level 1 character.
+    /// </summary>
     public class AbilityInputHandler : MonoBehaviour
     {
+        private const int MAX_SCORE = 18;
         private const int DEFAULT_SCORE = 10;
 
         [SerializeField]
@@ -21,7 +25,9 @@ namespace Pocruga.OOPT.CharacterWizard
         /// </summary>
         public event Action<bool> OnAbilityScoreChanged;
 
-        // indicates whether this ability is a key ability of the character
+        /// <summary>
+        /// indicates whether this ability is a key ability of the character 
+        /// </summary>
         public bool KeyAbility { get; set; }
 
         public bool ThreshholdReached { get; set; }
@@ -30,7 +36,7 @@ namespace Pocruga.OOPT.CharacterWizard
         public void IncrementScore()
         {
             int value = GetCurrentScore() + 1;
-            if (value <= 30 && !ThreshholdReached)
+            if (value <= MAX_SCORE && !ThreshholdReached)
                 ChangeScore(value, true);
         }
 

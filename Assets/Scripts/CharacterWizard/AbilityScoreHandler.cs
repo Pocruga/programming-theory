@@ -48,10 +48,12 @@ namespace Pocruga.OOPT.CharacterWizard
         {
             if (dice)
             {
-                // TODO implement dicing rules
+                // TODO implement origin dicing rules
                 // dice a 3W6 for each ability (value between 3 and 18) and
                 // sum of ability modifiers gets greater than +3
                 // otherwise repeat the procedure
+
+                // simplified implementation
                 int max = Random.Range(6, 18);
                 availableAbilityPoints.text = max.ToString();
                 return max;
