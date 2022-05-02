@@ -17,7 +17,7 @@ namespace Pocruga.OOPT.CharacterSheet
         // Format "{sign}{value} {abbreviation}", e.g. "+2 DEX", "-2 CON"
         public override string ToString()
         {
-            return string.Format("{0}{1} {2}", Value >= 0 ? "+" : "-", Value, Type.GetAbbrev());
+            return string.Format("{0}{1} {2}", Value >= 0 ? "+" : string.Empty, Value, Type.GetAbbrev());
         }
     }
 }

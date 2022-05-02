@@ -16,7 +16,7 @@ namespace Pocruga.OOPT.CharacterWizard
         private TMP_Text displayTitle;
 
         [SerializeField]
-        private TextMeshProUGUI displayText;
+        private Text displayText;
 
         [SerializeField]
         private TMP_Dropdown raceDropdown;
@@ -33,6 +33,8 @@ namespace Pocruga.OOPT.CharacterWizard
         void Start() {
             ActivateRaceSubSelection(false);
             // reset display text
+            displayTitle.text = "Select character property";
+            SetDisplayText(string.Empty);
         }
 
         // Start is called before the first frame update
@@ -42,30 +44,13 @@ namespace Pocruga.OOPT.CharacterWizard
             if (race != null)
             {
                 displayTitle.text = string.Format("Race {0}", race.Title);
-                SetDisplaytext(race.DisplayText);
+                SetDisplayText(race.DisplayText);
                 ActivateRaceSubSelection(race);
             }
         }
 
-        private void SetDisplaytext(string text) {
-            displayText.SetText(text);
-            Canvas.ForceUpdateCanvases();
-
-            // RectTransform rt = displayText.GetComponent<RectTransform>();
-            // Vector3 curPos = rt.transform.position;
-            // Debug.Log($"display text height is = {rt.rect.height}");
-
-            displayText.ForceMeshUpdate(true, true);
-
-            // float newY = (Mathf.Round(rt.rect.height/2)*-1) - 2f;
-            // Debug.Log($"move text to new y: {newY}");
-            // displayText.transform.position = new Vector3(curPos.x , newY, curPos.z);
-            // Canvas.ForceUpdateCanvases();
-
-            //Debug.Log($"old posiiton y is {displayText.transform.position.y}");
-            // Vector3 position = displayText.transform.position;
-            // displayText.transform.position = Vector3.up * displayText.bounds.size.x/2*-1;
-            // Debug.Log($"new posiiton y is {displayText.transform.position.y}");
+        private void SetDisplayText(string text) {
+            displayText.text = text;
         }
 
         private void ActivateRaceSubSelection(IRace race) {
@@ -100,7 +85,7 @@ namespace Pocruga.OOPT.CharacterWizard
             if (race != null)
             {
                 displayTitle.text = string.Format("Race {0}", race.Title);
-                SetDisplaytext(race.DisplayText);
+                SetDisplayText(race.DisplayText);
             }
         }
 

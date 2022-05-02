@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Pocruga.OOPT.CharacterSheet.Race
@@ -11,35 +12,46 @@ namespace Pocruga.OOPT.CharacterSheet.Race
 
         public override int HitPoints => 4;
 
-        public override string AbilityAdjustments {
-            get {
-                if(AbilityAdjustmentCount==0)
-                    return "Ability Adjustments: +2 on one selected ability.";
+        public override string AbilityAdjustments
+        {
+            get
+            {
+                if (AbilityAdjustmentCount == 0)
+                    return "\n<b>Ability Adjustments:</b> <i>+2 on one ability selected</i>";
                 return base.AbilityAdjustments;
             }
         }
 
-        public Human() {
-        }
-
         public override bool HasAdditionalSelection() => true;
 
-        public void SetAbilityToAdjust(string ability) {
-            if(Enum.TryParse<AbilityType>(ability, out AbilityType abilityType))
+        public override List<string> RaceAbilities
+        {
+            get
+            {
+                List<string> abilities = new List<string>();
+                abilities.Add("<i>Bonus Feature</i> Humans select one extra feat at 1st level.");
+                abilities.Add("<i>Skilled</i> Humans gain an additional skill rank at 1st level and each level thereafter.");
+                return abilities;
+            }
+        }
+
+        public void SetAbilityToAdjust(string ability)
+        {
+            if (Enum.TryParse<AbilityType>(ability, out AbilityType abilityType))
                 SetAbilityToAdjust(abilityType);
             else
                 throw new ArgumentException($"Unsupported ability {ability}!", nameof(ability));
         }
 
-        public void SetAbilityToAdjust(AbilityType abilityType) {
+        public void SetAbilityToAdjust(AbilityType abilityType)
+        {
             // Ability adjustments - +2 on one user selected ability
             AddAbilityAdjustment(new AbilityAdjustment(abilityType, 2));
         }
 
         public override void ApplyTo(PlayerCharacter character)
         {
-            // Bonus Feature - Humans select one extra feat at 1st level.
-            // Skilled - Humans gain an additional skill rank at 1st level and each level thereafter.
+            // TODO implement it!
         }
     }
 }

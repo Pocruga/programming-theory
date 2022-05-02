@@ -16,7 +16,7 @@ namespace Pocruga.OOPT.CharacterSheet.Race
             get 
             {
                 StringBuilder builder = new StringBuilder();
-                builder.Append("Ability Adjustments: ");
+                builder.Append("\n<b>Ability Adjustments:</b> ");
                 foreach(AbilityAdjustment adjustment in adjustments) {
                     builder.Append(adjustment.ToString());
                     if(!adjustment.Equals(adjustments.Last()))
@@ -26,11 +26,21 @@ namespace Pocruga.OOPT.CharacterSheet.Race
             } 
         }
 
-        public string DisplayText => $"{Description}\n{AbilityAdjustments}";
+        public string DisplayText {
+            get 
+            {
+                StringBuilder builder = new StringBuilder("<b>Race's Abilities</b>");
+                foreach(string str in RaceAbilities)
+                    builder.Append($"\n * {str}");
+                return $"{Description}\n\n{AbilityAdjustments}\n\n<b>HP:</b> {HitPoints}\n\n{builder.ToString()}";
+            }
+        }
 
         public abstract int HitPoints { get; }
 
         public int AbilityAdjustmentCount => adjustments.Count; 
+
+        public abstract List<string> RaceAbilities { get; }
 
         public abstract bool HasAdditionalSelection();
 

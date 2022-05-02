@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 
 namespace Pocruga.OOPT.CharacterSheet.Race
 {
@@ -11,14 +12,33 @@ namespace Pocruga.OOPT.CharacterSheet.Race
 
         public override bool HasAdditionalSelection() => false;
 
-        public override void ApplyTo(PlayerCharacter character)
+        public override List<string> RaceAbilities 
+        { 
+            get
+            {
+                List<string> abilities = new List<string>();
+                abilities.Add("<i>Fearless</i> Vesk receive a +2 racial bonus to saving throws against fear effects.");
+                abilities.Add("<i>Natural Weapons</i> Vesk are always considered armed. They can deal 1d3 lethal damage with unarmed strikes and the attack doesn't count as archaic. Vesk gain a unique weapon specialization with their natural weapons at 3rd level, allowing them to add 1 - 1/2 * their character level to their damage rolls for their natural weapons(instead of just adding their character level, as usual).");
+                abilities.Add("<i>Low-light Vision</i> Vesk can see in dim light as if it were normal light.");
+                abilities.Add("<i>Armor Savant</i> Vesk use armor in a way that complements their uniquely sturdy physiology. When wearing armor, they gain a +1 racial bonus to AC. When they're wearing heavy armor, their armor check penalty is 1 less severe than normal.");
+                return abilities; 
+            } 
+        }
+
+        public Vesk() : base() 
         {
             // Ability Adjustments: +2 Str, +2 Con, -2 Int
+            AddAbilityAdjustment(new AbilityAdjustment(AbilityType.Strength, 2));
+            AddAbilityAdjustment(new AbilityAdjustment(AbilityType.Constitution, 2));
+            AddAbilityAdjustment(new AbilityAdjustment(AbilityType.Intelligence, -2));
+        }
 
-            // Fearless - Vesk receive a + 2 racial bonus to saving throws against fear effects.
-            // Natural Weapons - Vesk are always considered armed.They can deal 1d3 lethal damage with unarmed strikes and the attack doesn�t count as archaic.Vesk gain a unique weapon specialization with their natural weapons at 3rd level, allowing them to add 1�1 / 2 � their character level to their damage rolls for their natural weapons(instead of just adding their character level, as usual).
-            // Low-light Vision - Vesk can see in dim light as if it were normal light.For more details, see page 264.
-            // Armor Savant - Vesk use armor in a way that complements their uniquely sturdy physiology. When wearing armor, they gain a + 1 racial bonus to AC. When they�re wearing heavy armor, their armor check penalty is 1 less severe than normal.
+        public override void ApplyTo(PlayerCharacter character)
+        {
+            // 
+            // 
+            // 
+            // 
         }
     }
 }

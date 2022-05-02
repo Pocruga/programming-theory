@@ -9,7 +9,7 @@ namespace Pocruga.OOPT.CharacterSheet.Race
 
         public override bool HasAdditionalSelection() => false;
 
-        protected override sealed string AbilityAdjustmentsUncomplete => string.Empty;
+        protected override sealed string AbilityAdjustmentsIncomplete => string.Empty;
 
         public Koresha() : base() 
         {
