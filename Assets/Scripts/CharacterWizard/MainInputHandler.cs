@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 
 using Pocruga.OOPT.CharacterSheet.Race;
+using Pocruga.OOPT.CharacterSheet.Theme;
 
 namespace Pocruga.OOPT.CharacterWizard
 {
@@ -72,7 +73,11 @@ namespace Pocruga.OOPT.CharacterWizard
 
         public void HandleThemeInput()
         {
-            displayTitle.text = string.Format("Theme {0}", themeDropdown.captionText.text);
+            ITheme theme = ThemeFactory.GetTheme(themeDropdown.value);
+            if(theme != null) {
+                displayTitle.text = $"Theme {theme.Title}";
+                SetDisplayText(theme.GetDisplayText());
+            }
         }
 
         public void HandleClassInput()
