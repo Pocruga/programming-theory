@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Pocruga.OOPT.CharacterSheet.Theme
+namespace Pocruga.OOPT.CharacterSheet.Themes
 {
     abstract class Theme : ITheme
     {

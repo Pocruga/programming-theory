@@ -1,6 +1,6 @@
 using System;
 
-namespace Pocruga.OOPT.CharacterSheet.Theme
+namespace Pocruga.OOPT.CharacterSheet.Themes
 {
     class Priest : Theme
     {

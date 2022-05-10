@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pocruga.OOPT.CharacterSheet.Race
+namespace Pocruga.OOPT.CharacterSheet.Races
 {
     public class Lashunta : Race
     {

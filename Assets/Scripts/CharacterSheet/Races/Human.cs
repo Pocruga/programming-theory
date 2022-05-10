@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Pocruga.OOPT.CharacterSheet.Race
+namespace Pocruga.OOPT.CharacterSheet.Races
 {
     public class Human : Race
     {

@@ -1,5 +1,5 @@
 
-namespace Pocruga.OOPT.CharacterSheet.Race
+namespace Pocruga.OOPT.CharacterSheet.Races
 {
     public class Koresha : Lashunta
     {

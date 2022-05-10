@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Pocruga.OOPT.CharacterSheet.Race
+namespace Pocruga.OOPT.CharacterSheet.Races
 {
     public interface IRace
     {
@@ -11,6 +11,7 @@ namespace Pocruga.OOPT.CharacterSheet.Race
         string DisplayText { get; }
 
         int HitPoints { get; }
+        
         List<string> RaceAbilities { get; }
 
         bool HasAdditionalSelection();

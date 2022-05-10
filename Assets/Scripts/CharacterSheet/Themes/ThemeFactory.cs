@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Pocruga.OOPT.CharacterSheet.Theme
+namespace Pocruga.OOPT.CharacterSheet.Themes
 {
 
     public class ThemeFactory

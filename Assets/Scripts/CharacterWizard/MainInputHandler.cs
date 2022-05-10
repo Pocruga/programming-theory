@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 using TMPro;
 
-using Pocruga.OOPT.CharacterSheet.Race;
-using Pocruga.OOPT.CharacterSheet.Theme;
+using Pocruga.OOPT.CharacterSheet.Races;
+using Pocruga.OOPT.CharacterSheet.Themes;
 
 namespace Pocruga.OOPT.CharacterWizard
 {

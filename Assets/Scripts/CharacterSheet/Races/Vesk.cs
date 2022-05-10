@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Pocruga.OOPT.CharacterSheet.Race
+namespace Pocruga.OOPT.CharacterSheet.Races
 {
     public class Vesk : Race
     {
