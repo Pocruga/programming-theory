@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Pocruga.OOPT.CharacterSheet.Races
 {
+    // INHERITANCE
     public class Human : Race
     {
         public override string Title => nameof(Human);

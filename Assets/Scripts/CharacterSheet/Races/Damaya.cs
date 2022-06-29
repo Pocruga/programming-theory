@@ -1,6 +1,7 @@
 
 namespace Pocruga.OOPT.CharacterSheet.Races
 {
+    // INHERITANCE
     public class Damaya : Lashunta
     {
         public override string Title => $"{base.Title} ({nameof(Damaya)})";

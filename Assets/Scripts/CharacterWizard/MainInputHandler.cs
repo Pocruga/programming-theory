@@ -45,30 +45,11 @@ namespace Pocruga.OOPT.CharacterWizard
             if (race != null)
             {
                 displayTitle.text = string.Format("Race {0}", race.Title);
+                // ABSTRACTION
                 SetDisplayText(race.DisplayText);
+                // ABSTRACTION
                 ActivateRaceSubSelection(race);
             }
-        }
-
-        private void SetDisplayText(string text) {
-            displayText.text = text;
-        }
-
-        private void ActivateRaceSubSelection(IRace race) {
-            ActivateRaceSubSelection(race.HasAdditionalSelection());
-
-            if(race.HasAdditionalSelection()) {
-                subChoiceDropdown.AddOptions(RaceFactory.GetSubChoiceElements(race));
-            }
-            subChoiceDropdown.RefreshShownValue();
-        }
-
-        private void ActivateRaceSubSelection(bool enable) {
-            subChoiceDropdown.ClearOptions();
-            TextMeshProUGUI placeholder = (TextMeshProUGUI)subChoiceDropdown.placeholder;
-            placeholder.gameObject.SetActive(enable);
-            subChoiceDropdown.enabled = enable;
-            subChoiceDropdown.interactable = enable;
         }
 
         public void HandleThemeInput()
@@ -76,6 +57,7 @@ namespace Pocruga.OOPT.CharacterWizard
             ITheme theme = ThemeFactory.GetTheme(themeDropdown.value);
             if(theme != null) {
                 displayTitle.text = $"Theme {theme.Title}";
+                // ABSTRACTION
                 SetDisplayText(theme.GetDisplayText());
             }
         }
@@ -90,8 +72,34 @@ namespace Pocruga.OOPT.CharacterWizard
             if (race != null)
             {
                 displayTitle.text = string.Format("Race {0}", race.Title);
+                // ABSTRACTION
                 SetDisplayText(race.DisplayText);
             }
+        }
+
+        // ABSTRACTION
+        private void SetDisplayText(string text) {
+            displayText.text = text;
+        }
+
+        // ABSTRACTION
+        private void ActivateRaceSubSelection(IRace race) {
+            // ABSTRACTION
+            ActivateRaceSubSelection(race.HasAdditionalSelection());
+
+            if(race.HasAdditionalSelection()) {
+                subChoiceDropdown.AddOptions(RaceFactory.GetSubChoiceElements(race));
+            }
+            subChoiceDropdown.RefreshShownValue();
+        }
+
+        // ABSTRACTION
+        private void ActivateRaceSubSelection(bool enable) {
+            subChoiceDropdown.ClearOptions();
+            TextMeshProUGUI placeholder = (TextMeshProUGUI)subChoiceDropdown.placeholder;
+            placeholder.gameObject.SetActive(enable);
+            subChoiceDropdown.enabled = enable;
+            subChoiceDropdown.interactable = enable;
         }
 
     }

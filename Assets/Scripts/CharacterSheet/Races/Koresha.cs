@@ -1,14 +1,19 @@
 
 namespace Pocruga.OOPT.CharacterSheet.Races
 {
+    // INHERITANCE
     public class Koresha : Lashunta
     {
+        // POLYMORPHISM - override
         public override string Title => $"{base.Title} ({nameof(Koresha)})";
 
+        // POLYMORPHISM - override
         public override string Description => $"{base.Description}\nKorasha endure brutal physical hardship. In ancient times, each village, town or city would have a specific rite of passage - usually involving surviving in Castrovel's wilderness for a time. Korasha would often spend a year or two preparing themselves for this potentially deadly ritual, plundering the libraries of knowledge offered by the damaya. The ritual often lasted several months, during which time exhaustion left no time for creative thinking - relying instead on age-old methods and counterstrategies generations old. In modern times, however, the korasha are able to simulate this ritual with magic, heavily laced with various technology like holograms and artificial gravity.";
 
+        // POLYMORPHISM - override
         public override bool HasAdditionalSelection() => false;
 
+        // POLYMORPHISM - override
         protected override sealed string AbilityAdjustmentsIncomplete => string.Empty;
 
         public Koresha() : base() 

@@ -8,6 +8,7 @@ namespace Pocruga.OOPT.CharacterSheet.Races
 {
     public class RaceFactory 
     {
+        // POLYMORPHISM - overload
         public static IRace GetRace(string race)
         {
             if(Enum.TryParse<RaceType>(race, out RaceType raceType))
@@ -15,6 +16,7 @@ namespace Pocruga.OOPT.CharacterSheet.Races
             throw new ArgumentException($"Unsupported race: {race}", nameof(race));
         }
 
+        // POLYMORPHISM - overload
         public static IRace GetRace(string race, string additionalInfo)
         {
             if(Enum.TryParse<RaceType>(race, out RaceType raceType))
@@ -22,6 +24,7 @@ namespace Pocruga.OOPT.CharacterSheet.Races
             throw new ArgumentException($"Unsupported race: {race}", nameof(race));
         }
 
+        // POLYMORPHISM - overload
         private static IRace GetRace(RaceType race) => race switch
         {
             RaceType.Android => new Android(),
@@ -33,6 +36,7 @@ namespace Pocruga.OOPT.CharacterSheet.Races
             _ => throw new ArgumentException($"Unsupported race: {race}", nameof(race))
         };
 
+        // POLYMORPHISM - overload
         private static IRace GetRace(RaceType race, string additional) 
         {
             if(string.IsNullOrEmpty(additional))

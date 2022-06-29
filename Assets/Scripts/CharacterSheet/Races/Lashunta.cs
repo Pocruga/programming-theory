@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Pocruga.OOPT.CharacterSheet.Races
 {
+    // INHERITANCE
     public class Lashunta : Race
     {
         public override string Title => nameof(Lashunta);
@@ -28,6 +29,7 @@ namespace Pocruga.OOPT.CharacterSheet.Races
             }
         }
 
+        // ENCAPSULATION
         public override List<string> RaceAbilities
         {
             get

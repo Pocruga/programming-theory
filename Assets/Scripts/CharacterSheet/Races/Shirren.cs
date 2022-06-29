@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Pocruga.OOPT.CharacterSheet.Races
 {
-
+    // INHERITANCE
     public class Shirren : Race
     {
         public override string Title => nameof(Shirren);
